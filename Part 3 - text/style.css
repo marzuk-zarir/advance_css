@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+
+/* ! sec1 */
+/**
+ * ! text shadow:
+ * ? text-shadow: x-axis, y-axis, blur-deepness(optional), shadow-color(optional)
+ */
+.shadow {
+    font-size: 1.3rem;
+    padding: 10px;
+    text-shadow: 10px 5px 2px red;
+}
+/**
+ * ! vertical-align:
+ * ? vertical-align: baseline(default) | text-top | text-bottom | sub | super
+ */
+img.a {
+    vertical-align: baseline;
+}
+img.b {
+    vertical-align: text-top;
+}
+img.c {
+    vertical-align: text-bottom;
+}
+img.d {
+    vertical-align: sub;
+}
+img.e {
+    vertical-align: super;
+}

@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+.header2 {
+    width: 70%;
+    margin: 0 auto;
+    background: gray;
+    padding: 20px;
+}
+.header2 h3 {
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px 0;
+}
+.header2 #nav a {
+    display: block;
+    padding: 5px;
+    color: aliceblue;
+    font-size: large;
+}
+.header2 #nav a:hover {
+    color: aqua;
+}
+.arrow {
+    background: #cccccc;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 5px;
+    z-index: 100;
+}
+.arrow .arrow-link {
+    box-sizing: border-box;
+    position: absolute;
+    top: -17px;
+    left: 12px;
+    color: rgb(51, 0, 235);
+    font-size: 45px;
+    text-decoration: none;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.box::after {
+    content: 'hover me';
+    color: white;
+    font-size: 1.3rem;
+}
+/**
+ * ! transition-property:
+ * * which property we want add to transition
+ *
+ * * transition-property: width;
+ * --> means we want to add transition with width
+ *
+ * ? we can also use multiple transition-property with comma(,) like
+ * - transition-property: width, height, transform;
+ */
+
+.tp {
+    background: lightcoral;
+    transition-property: width, height;
+    transition-duration: 0.8s;
+}
+.tp:hover {
+    width: 250px;
+    height: 250px;
+}
+
+/**
+ * ! transition-duration:
+ * * transition-duration property defines how long time an transition should take to complete
+ *
+ * note: without transition-property and transition-duration transition can not work
+ */
+
+.td {
+    background: lightskyblue;
+    transition-property: width, height;
+    transition-duration: 0.5s;
+}
+.td:hover {
+    width: 220px;
+    height: 220px;
+}
+
+/**
+ * ! transition-delay:
+ * * transition-delay property specifies a delay for the start of an transition
+ */
+
+.tdl {
+    background: lightslategray;
+    transition-property: width, height;
+    transition-duration: 0.5s;
+    transition-delay: 1s;
+}
+.tdl:hover {
+    width: 260px;
+    height: 260px;
+}
+
+/**
+ * ! transition-timing-function:
+ *  * * transition-timing-function property specifies the speed curve of the transition
+ * - ease - Specifies an transition with a slow start, then fast, then end slowly (this is default)
+ * - linear - Specifies an transition with the same speed from start to end
+ * - ease-in - Specifies an transition with a slow start
+ * - ease-out - Specifies an transition with a slow end
+ * - ease-in-out - Specifies an transition with a slow start and end
+ * - cubic-bezier(n,n,n,n) - Lets we define our own values in a cubic-bezier function
+ */
+
+.tt {
+    background: darkcyan;
+    transition-property: width, height;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    /* transition-timing-function: ease; */
+    /* transition-timing-function: ease-in; */
+    /* transition-timing-function: ease-out; */
+    /* transition-timing-function: ease-in-out; */
+    /* transition-timing-function: cubic-bezier(); */
+}
+.tt:hover {
+    width: 260px;
+    height: 260px;
+}
+
+/**
+ * ! transition(shorthand):
+ * * transition: transition-property transition-duration transition-timing-func transition delay
+ * ? transition: width 2s linear 1s;
+ *
+ * --> serial maintain is not required
+ *
+ * note: in transition(shorthand) transition-property and transition-duration is required and others are optional
+ */
+.t {
+    background: darkgrey;
+    /* transition-property: width, height;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    transition-delay: 1s; */
+    /* transition: width 0.5s, height 0.6s linear 1s; */
+    transition: width 2s, height 2s, transform 2s;
+}
+.t:hover {
+    width: 250px;
+    height: 250px;
+    transform: rotate(360deg);
+}

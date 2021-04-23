@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/**
+ * ! Background Property:
+ * ? background-image: url('image_path_in_string')
+ * ? background-position: vertical_position(top|center|bottom) horizontal_position(left|center|right)
+ * ? background-repeat: repeat-x | repeat-y | no-repeat
+ * ? background-attachment: scroll (default) | fixed;
+ *
+ * ! Background Shorthand:
+ * ? background: bg_color bg_img bg_position bg_repeat bg_attachment
+ * note: It does not matter if one of the property values is missing, as long as the other ones are in this order
+ */
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+    /* background-image: url('./canvas.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+    background: no-repeat url('./canvas.jpg') top center fixed;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}

@@ -1,0 +1,192 @@
+/**============================================
+* *
+* * Author: Marzuk Zarir
+* * Github Profile: https://www.github.com/marzuk-zarir
+* * Version: 1.0.0
+* * Licensed under the MIT license - http://opensource.org/licenses/MIT
+* * Copyright (c) 2021 Marzuk zarir
+* *
+**==============================================*/
+
+/**
+ * ! CSS Table of Content:
+ * * 1.0 - Reset Stylesheets
+ * * 2.0 - Main Navbar
+ * *   2.1 - Logo Area
+ * *   2.2 - Menu Area
+ * *   2.3 - Navbar Icon Area
+ * * 3.0 - Responsive Layout
+ * *   3.1 - Tablet Layout
+ * *   3.2 - Mobile Layout
+ */
+
+/*=====================================
+    * 1.0 - Reset Stylesheets *
+=======================================*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/*=====================================
+    * 2.0 - Main Navbar *
+=======================================*/
+.nav-bar {
+    width: 100%;
+    position: fixed;
+    background: #0082e6e5;
+    padding: 15px;
+    overflow: hidden;
+}
+
+/*=====================================
+    * 2.1 - Logo Area *
+=======================================*/
+.nav-bar #logo-area {
+    width: 20%;
+    float: left;
+}
+
+.nav-bar #logo-area h3 {
+    font: 2rem cursive;
+    padding-left: 20px;
+}
+
+.nav-bar #logo-area a {
+    color: azure;
+    text-decoration: none;
+}
+
+/*=====================================
+    * 2.2 - Menu Area *
+=======================================*/
+.nav-bar #menu-area {
+    width: 80%;
+    float: right;
+}
+
+#menu-area ul {
+    width: 60%;
+    text-align: center;
+    padding-top: 10px;
+    margin-left: auto;
+}
+
+#menu-area ul li {
+    display: inline-block;
+    list-style-type: none;
+    font: 1.2rem cursive;
+}
+
+#menu-area ul li a {
+    color: aliceblue;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+#menu-area ul li a:first-child,
+#menu-area ul li a:last-child {
+    margin-right: 0;
+}
+
+/*=====================================
+    * 2.3 - Navbar Icon Area *
+=======================================*/
+#menu-icon {
+    display: none;
+}
+
+.fa-bars,
+.fa-times {
+    font-size: 30px;
+}
+/*=====================================
+    * 3.0 - Responsive Layout *
+=======================================*/
+
+/*=====================================
+    * 3.1 - Tablet Layout *
+=======================================*/
+@media screen and (max-width: 990px) {
+    .nav-bar #logo-area,
+    .nav-bar #menu-area {
+        width: 100%;
+        float: none;
+    }
+
+    .nav-bar #logo-area {
+        margin-bottom: 20px;
+    }
+
+    .nav-bar #logo-area h3 {
+        width: 50%;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .nav-bar #menu-area ul {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+/*=====================================
+    * 3.2 - Mobile Layout *
+=======================================*/
+@media screen and (max-width: 564px) {
+    .nav-bar #logo-area {
+        width: 30%;
+        float: left;
+        margin-bottom: 0;
+    }
+
+    .nav-bar #logo-area h3 {
+        width: 100%;
+        margin-right: auto;
+    }
+
+    #menu-icon i {
+        cursor: pointer;
+    }
+
+    #menu-icon {
+        display: block;
+        width: 70%;
+        text-align: right;
+        float: right;
+        margin-top: 10px;
+        margin-left: auto;
+    }
+
+    .d-none {
+        display: none;
+    }
+
+    .d-block {
+        display: block;
+    }
+
+    .nav-bar #menu-area ul {
+        width: 100%;
+        padding: 15px;
+        margin-top: 60px;
+    }
+
+    .nav-bar #menu-area li {
+        width: 100%;
+    }
+
+    #menu-area ul li a {
+        margin: 0;
+    }
+}

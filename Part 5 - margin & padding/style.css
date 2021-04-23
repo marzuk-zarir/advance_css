@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+
+/**
+ * ! Margin / Padding Property:
+ * * if we provide one value margin works on all sides (top, right, bottom, left)
+ * * if we provide two values 1st value works on top & bottom side and 2nd value works on left & right side
+ * ? if we provide three values 1st value works on top side, 2nd value works on left & right side and 3rd value work on bottom side
+ * * if we provide four values 1st value works on top side, 2nd value works on right side, 3rd value works on bottom side, 4th value works on left side
+ */
+
+.margin1 {
+    background: red;
+    width: 200px;
+    margin: 20px;
+}
+.margin2 {
+    background: grey;
+    width: 200px;
+    margin: 40px 60px;
+}
+.margin3 {
+    background: paleturquoise;
+    width: 200px;
+    margin: 10px 20px 30px; /* ! margin: top, left-right, bottom */
+}
+.margin4 {
+    background: yellowgreen;
+    width: 200px;
+    margin: 40px 20px 15px 50px;
+}
+
+/**
+ * ! Padding:
+ * * padding is same as margin...only difference is margin works outside of the box but padding works inside the box
+ */
+.padding1 {
+    background: red;
+    width: 200px;
+    padding: 20px;
+}
+.padding2 {
+    background: grey;
+    width: 200px;
+    padding: 40px 60px;
+}
+.padding3 {
+    background: paleturquoise;
+    width: 200px;
+    padding: 10px 20px 30px; /* ! padding: top, left-right, bottom */
+}
+.padding4 {
+    background: yellowgreen;
+    width: 200px;
+    padding: 40px 20px 15px 50px;
+}

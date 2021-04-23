@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+
+.master-box {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border: 1px solid tan;
+    left: 20px;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+/**
+ * ! z-index:
+ * ? z-index only works in position:relative|absolute|fixed|sticky
+ * * whose z-index is greater than other's z-index, he will overlap other's
+ * ? by default z-index is 0
+ * * we can use negative value(-) in z-index
+ * note: z-index not work in default(static) position
+ */
+.box--limegreen {
+    background: limegreen;
+    z-index: 1;
+}
+.box--skyblue {
+    background: skyblue;
+    top: 100px;
+    left: 30px;
+    z-index: 4;
+}
+.box--purple {
+    background: purple;
+    left: 90px;
+    top: 61px;
+    z-index: -1;
+}
+
+/**
+ * ! css variable:
+ * ? for use variable we should declare :root{} selector and declare variables in :root{}.... every variables name starts with double_hyphen(--)
+ * * than after initial property declaration we can use var(variable_name_with_hyphen) function to use our variables
+ *
+ * ? we can also add media query for change our variables value for small/big screen like:
+ * *
+ * @media only screen and (max-width: 600px) {
+ *    :root {
+ *        --warning-color: limegreen;
+ *        --primary-color: green;
+ *        --secondary-color: black;
+ *        --info-color: skyblue;
+ *    }
+ * }
+ * *
+ */
+:root {
+    --warning-color: yellow;
+    --primary-color: teal;
+    --secondary-color: gray;
+    --info-color: purple;
+}
+.color-box {
+    border: 1px solid tan;
+    width: 400px;
+    height: 200px;
+    margin-left: 20px;
+}
+.color-box__yellow {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: var(--warning-color);
+}
+.color-box__teal {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: var(--primary-color);
+}
+.color-box__gray {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: var(--secondary-color);
+}
+.color-box__violate {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: var(--info-color);
+}

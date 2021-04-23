@@ -1,0 +1,108 @@
+* {
+    font-family: 'helvetica';
+    font-weight: 300;
+}
+
+.d-float {
+    float: left;
+    margin: 10px 5px;
+}
+
+img {
+    width: 250px;
+    height: auto;
+}
+
+.blur {
+    -webkit-filter: blur(2px);
+    filter: blur(2px); /* blur(use only pixel) */
+}
+
+.brightness {
+    -webkit-filter: brightness(150%);
+    filter: brightness(150%); /* brightness(use only %) */
+}
+
+.contrast {
+    -webkit-filter: contrast(200%);
+    filter: contrast(200%); /* contrast(use only %) */
+}
+
+.grayscale {
+    -webkit-filter: grayscale(70%);
+    filter: grayscale(70%); /* grayscale(use only %) */
+}
+
+.saturate {
+    -webkit-filter: saturate(200%);
+    filter: saturate(200%); /* saturate(use only %) */
+}
+
+.sepia {
+    -webkit-filter: sepia(200%);
+    filter: sepia(200%); /* sepia(use only %) */
+}
+
+.opacity {
+    -webkit-filter: opacity(0.6);
+    filter: opacity(0.6); /* opacity(use only % or floating number below 1) */
+}
+
+.hue {
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg); /* hue(use only deg) 0deg is default */
+}
+
+.drop-shadow {
+    -webkit-filter: drop-shadow(4px 5px 2px green);
+    filter: drop-shadow(
+        4px 5px 2px green
+    ); /* drop-shadow(right, bottom, dimness, color) */
+}
+
+.invert {
+    -webkit-filter: invert(90%);
+    filter: invert(
+        90%
+    ); /* invert(use only % or floating number below/above 1) */
+}
+
+.clear-both {
+    float: none;
+}
+
+.img-overlay {
+    background: url('./forest.jpg') no-repeat;
+    width: 640px;
+    min-width: 300px;
+    height: 425px;
+    color: aliceblue;
+    font-weight: 400;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.overlay {
+    width: 100%;
+    height: auto;
+    background: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.75;
+}
+
+h3 {
+    font-size: 40px;
+    z-index: 1;
+}

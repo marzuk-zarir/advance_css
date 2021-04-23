@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+
+/**
+ * ! Position Property:
+ * * position: static(default) | relative | fixed | absolute | sticky
+ * ? static is default behavior
+ * ? relative means position is count from body
+ * ? absolute means position is count from his parent element
+ *
+ * ? fixed means position is fixed in body and it is never hide when we scroll
+ * ? sticky means position is sticky in body and it is never hide when we scroll(not supported in old browser)
+ *
+ * note: without static position every position support z-index....whose z-index is greater than other's z-index he overlap other elements
+ */
+
+/**
+ * ! position fixed and sticky are not same.... position fixed always placed in one place
+ * * we can use top,right,bottom,left values for proper placement
+ */
+.postionfixed {
+    position: fixed;
+    background: limegreen;
+    border: 3px solid salmon;
+    padding: 10px;
+}
+/**
+ * ? static is default positioning in browser
+ * * top,right,bottom,left values aren't support
+ */
+.positionstatic {
+    position: static;
+    border: 3px solid skyblue;
+    padding: 5px;
+}
+
+/**
+ * ! position sticky is static but when we scroll down and cross sticky element it is stick with body...this position is most used in navbar
+ * * we can use top,right,bottom,left values for proper placement
+ * note: top|right|bottom|left is required
+ */
+.positionsticky {
+    width: 150px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    left: 200px;
+    background: skyblue;
+    border: 3px solid seagreen;
+    padding: 10px;
+}
+/**
+ * ? position relative
+ * * we can use top,right,bottom,left values for proper placement
+ * ! this top,right,bottom,left position is count from body not any other elements
+ */
+.positionrelative {
+    width: 300px;
+    position: relative;
+    left: 100px;
+    border: 3px solid teal;
+    padding: 10px;
+}
+
+/**
+ * ? position absolute
+ * * we can use top,right,bottom,left values for proper placement
+ * ! this top,right,bottom,left is count from his parent element and his parent element must have position relative...otherwise position absolute doesn't work
+ */
+.container {
+    width: 400px;
+    height: 350px;
+    position: relative;
+    left: 30px;
+    border: 3px solid tomato;
+    padding: 10px;
+}
+.container__positionabsolute {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: 3px solid cyan;
+    font-weight: bold;
+    padding: 10px;
+}

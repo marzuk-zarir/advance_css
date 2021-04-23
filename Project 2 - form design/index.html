@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="./style.css" />
+        <!-- title -->
+        <title>Form Design</title>
+    </head>
+    <body>
+        <!-- form -->
+        <div class="container">
+            <form action="#" id="my_form">
+                <label for="user_name">Username:</label>
+                <input
+                    type="text"
+                    name="user_name"
+                    id="user_name"
+                    placeholder="Username"
+                />
+
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                />
+
+                <label for="password">Password:</label>
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Password"
+                />
+
+                <label for="re_password">Retype Password:</label>
+                <input
+                    type="password"
+                    name="re_password"
+                    id="re_password"
+                    placeholder="Retype Password"
+                />
+
+                <div class="condition">
+                    <input type="checkbox" name="terms" id="terms" />
+                    <label for="terms">Accept the Terms & Policy</label>
+                </div>
+
+                <hr />
+
+                <div class="icons">
+                    <a href="#"
+                        ><img
+                            src="./assets/google.svg"
+                            class="icon"
+                            alt="google"
+                    /></a>
+
+                    <a href="#"
+                        ><img
+                            src="./assets/facebook.svg"
+                            class="icon"
+                            alt="facebook"
+                    /></a>
+
+                    <a href="#"
+                        ><img
+                            src="./assets/twitter.svg"
+                            class="icon"
+                            alt="twitter"
+                        />
+                    </a>
+
+                    <a href="#">
+                        <img
+                            src="./assets/pinterest.svg"
+                            class="icon"
+                            alt="pinterest"
+                    /></a>
+                </div>
+
+                <a href="#" class="crt-account">Already have an account?</a>
+                <input type="submit" value="Sign Up" />
+            </form>
+        </div>
+    </body>
+</html>

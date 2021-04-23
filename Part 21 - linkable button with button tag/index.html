@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+            integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <script defer>
+            window.addEventListener('load', function () {
+                browseLink('fb', 'https://fb.com/marzuk-zarir');
+                browseLink('tw', 'https://twitter.com');
+                browseLink('ins', 'https://instagram.com');
+                browseLink('yt', 'https://youtube.com');
+                browseLink('gp', 'https://plus.google.com');
+                browseLink('gh', 'https://github.com/marzuk-zarir');
+                browseLink('so', 'https://stackoverflow.com/marzuk-zarir');
+                function browseLink(className, url) {
+                    const element = document.getElementsByClassName(
+                        className
+                    )[0];
+                    element.addEventListener('click', function (e) {
+                        window.open(url);
+                        e.target.classList.add('request-callback');
+                    });
+                }
+            });
+        </script>
+        <title>Linkable button with button tag</title>
+    </head>
+    <body>
+        <!-- social link design -->
+        <div class="social-link">
+            <h1 class="heading">Social Link</h1>
+            <div class="social-link-container">
+                <button class="social_btn fb">
+                    <i class="fab fa-facebook-f"></i>
+                </button>
+                <button class="social_btn tw">
+                    <i class="fab fa-twitter"></i>
+                </button>
+                <button class="social_btn ins">
+                    <i class="fab fa-instagram"></i>
+                </button>
+                <button class="social_btn yt">
+                    <i class="fab fa-youtube"></i>
+                </button>
+                <button class="social_btn gp">
+                    <i class="fab fa-google-plus-g"></i>
+                </button>
+                <button class="social_btn gh">
+                    <i class="fab fa-github"></i>
+                </button>
+                <button class="social_btn so">
+                    <i class="fab fa-stack-overflow"></i>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+.header2 {
+    width: 70%;
+    margin: 0 auto;
+    background: gray;
+    padding: 20px;
+}
+.header2 h3 {
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px 0;
+}
+.header2 #nav a {
+    display: block;
+    padding: 5px;
+    color: aliceblue;
+    font-size: large;
+}
+.header2 #nav a:hover {
+    color: aqua;
+}
+.arrow {
+    background: #cccccc;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 5px;
+}
+.arrow .arrow-link {
+    box-sizing: border-box;
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    color: rgb(51, 0, 235);
+    font-size: 45px;
+    text-decoration: none;
+}
+/*          Y-axis
+              ._.
+              | |
+              | |
+              | |
+              | |
+              |_|
+  ______________________________
+ /_____________________________/  X-axis
+              ._.
+              | |
+              | |   |
+              | |  (+)
+              | |   |
+              |_|   ^
+
+*/
+
+/**
+ * ! scaleX, scaleY, scale:
+ * * scale() increase|decrease the width | height | width&height of an element....scale(integer or floating number) func show bigger/smaller form original width(x) | height(y) | width&height
+ *
+ * ? scaleX:
+ * * scaleX(num) increases or decreases the width of an element
+ * --> transform: scaleX(2)
+ * --> means element width is (original_width * 2)
+ *
+ *  ? scaleY:
+ * * scaleY(num) increases or decreases the height of an element
+ * --> transform: scaleY(1.2)
+ * --> means element height is (original_height * 1.2)
+ *
+ *  ? scale:
+ * * scale(num) increases or decreases the width and height of an element
+ * --> transform: scale(1.5)
+ * --> means element width is (original_width * 1.5) and height is (original_height * 1.5)
+ *
+ * note: only scaleX or scaleY change ratio of an element thats why paragraph's word or image are broken
+ */
+
+/** scaleX **/
+.scalex {
+    width: 200px;
+    height: 200px;
+    background: lightblue;
+    margin: 30px auto;
+    transition: 2s; /* transition property not required */
+}
+.scalex:hover {
+    transform: scaleX(2);
+}
+/** scaleY **/
+.scaley {
+    width: 200px;
+    height: 200px;
+    background: lightsalmon;
+    margin: 60px auto;
+    transition: 0.5s; /* transition property not required */
+}
+.scaley:hover {
+    transform: scaleY(1.2);
+}
+/** scale **/
+.scale {
+    width: 200px;
+    height: 200px;
+    background: lightgreen;
+    margin: 30px auto;
+    transition: 2s; /* transition property not required */
+}
+.scale:hover {
+    transform: scale(
+        1.5
+    ); /* we can also define different x and y axis value like scale(1.5, 1.9) */
+}
+
+/**
+ * ! rotate():
+ * * rotate(deg) func rotates an element clockwise or anti-clockwise according to a given degree
+ *
+ * ? we can individually declared rotateX() and rotateY() func
+ *
+ * * if deg value is positive(+) rotates element in clockwise
+ * * if deg value is negative(-) rotates element in anti-clockwise
+ */
+.rotate {
+    width: 200px;
+    height: 200px;
+    background: darkgoldenrod;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 auto;
+    transition: 1s; /* transition is not required */
+}
+.rotate:hover {
+    /* transform: rotate(-120deg); */
+    transform: rotate(120deg);
+}
+
+/**
+ * ! skewX(), skewY(), skew():
+ * * skew(deg) func skews an element along the x|y|x-y axis by the given angle
+ *
+ * ? skewX:
+ * * skewX() func skews an element along the X-axis by the given angle
+ *
+ * ? skewY:
+ * * skewX() func skews an element along the Y-axis by the given angle
+ *
+ * ? skew:
+ * * skew() func skews an element along the X and Y-axis by the given angles
+ *
+ * note: skewX | skewY | skew change paragraph's text and image's ratio
+ */
+
+/** shewX **/
+.skewx {
+    width: 200px;
+    height: 200px;
+    background: darkred;
+    margin: 20px auto;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: 0.8s; /* transition is not required */
+}
+.skewx:hover {
+    transform: skewX(20deg);
+}
+
+/** shewY **/
+.skewy {
+    width: 200px;
+    height: 200px;
+    background: darkviolet;
+    margin: 40px auto;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: 0.8s; /* transition is not required */
+}
+.skewy:hover {
+    transform: skewY(30deg);
+}
+
+/** shew **/
+.skew {
+    width: 200px;
+    height: 200px;
+    background: darkseagreen;
+    margin: 20px auto;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: 0.8s; /* transition is not required */
+}
+.skew:hover {
+    transform: skew(40deg);
+}
+
+/**
+ * ! translate:
+ * * translate() func moves an element from its current position (according to the parameters given for the X-axis and the Y-axis
+ *
+ * * we can also use negative value
+ *
+ * ? we can individually declared translateX() and translateY() func
+ *
+ * note: translate(x-axis, y-axis) both parameter is required
+ */
+.translate {
+    width: 200px;
+    height: 200px;
+    background: darkorange;
+    margin: 10px auto;
+    transition: 1.2s; /* transition is not required */
+}
+.translate:hover {
+    /* transform: translate(-50px, -60px); */
+    transform: translate(50px, 60px);
+}
+
+/**
+ * ! matrix(shorthand):
+ * * matrix() func take six parameters, containing mathematic functions, which allows you to rotate, scale, move (translate), and skew elements
+ * ? transform: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+ */
+.matrix {
+    width: 200px;
+    height: 200px;
+    background: darkcyan;
+    margin: 10px auto;
+    transition: 1.2s; /* transition is not required */
+}
+.matrix:hover {
+    transform: matrix(1.2, 0.3, 0.2, 1.2, 77, 70);
+}

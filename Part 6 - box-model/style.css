@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+
+/**
+ * ! Box Model:
+ * ? initial box width is 200px but margin, padding, border increase its width....so total width is = {10(m.l)+10(b.l)+10(p.l)+200(width)+10(p.r)+10(b.r)+10(m.r)} = 260px
+ * * same as height
+ */
+
+.box {
+    background: gray;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    border: 10px solid cyan;
+    padding: 10px;
+}

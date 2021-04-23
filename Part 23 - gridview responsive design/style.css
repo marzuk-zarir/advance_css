@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    color: #212121;
+    font: 16px helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.header {
+    background: lightseagreen;
+    text-align: center;
+    padding: 15px;
+}
+
+.top_navbar {
+    background: lightgreen;
+    text-align: center;
+    padding: 10px;
+}
+
+.top_navbar a {
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    color: #212121;
+    font-size: 1.1rem;
+}
+
+.top_navbar a:first-child {
+    margin: 0;
+}
+
+.top_navbar a:hover {
+    text-decoration: underline;
+}
+
+.main_section {
+    padding: 20px;
+    background: lightblue;
+}
+
+.aside_section {
+    background: lightsteelblue;
+    padding: 20px;
+}
+
+.aside_section .card {
+    padding: 10px;
+}
+
+.aside_section .card-heading {
+    font-size: 1.1rem;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.footer a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/**
+ * ! grid view responsive design:
+ * * in grid view design there are 12 child container in a parent container and different device have updated width of 12 child container
+ *
+ * ? to get a grid view design:
+ * * 1. first of all, we should take a container(in this design row is container) and clear the content after container
+ * * 2. then take (col-1,col-2,....,col-12) 12 column child container and set their width is 100% / container_number in descending(12,11,...,1)
+ * * 3. at last all container set to float left
+ *
+ */
+
+.row::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+[class*='col-'] {
+    width: 100%;
+    float: left;
+}
+
+/** tablet view **/
+
+@media only screen and (min-width: 576px) {
+    .col-tb-1 {
+        width: 8.33%;
+    }
+    .col-tb-2 {
+        width: 16.66%;
+    }
+    .col-tb-3 {
+        width: 25%;
+    }
+    .col-tb-4 {
+        width: 33.33%;
+    }
+    .col-tb-5 {
+        width: 41.66%;
+    }
+    .col-tb-6 {
+        width: 50%;
+    }
+    .col-tb-7 {
+        width: 58.33%;
+    }
+    .col-tb-8 {
+        width: 66.66%;
+    }
+    .col-tb-9 {
+        width: 75%;
+    }
+    .col-tb-10 {
+        width: 83.33%;
+    }
+    .col-tb-11 {
+        width: 91.66%;
+    }
+    .col-tb-12 {
+        width: 100%;
+    }
+}
+
+/** desktop view **/
+
+@media only screen and (min-width: 768px) {
+    .col-1 {
+        width: 8.33%;
+    }
+    .col-2 {
+        width: 16.66%;
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-4 {
+        width: 33.33%;
+    }
+    .col-5 {
+        width: 41.66%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-7 {
+        width: 58.33%;
+    }
+    .col-8 {
+        width: 66.66%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+}

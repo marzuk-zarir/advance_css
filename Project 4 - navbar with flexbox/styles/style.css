@@ -1,0 +1,242 @@
+/*=====================================
+    * reset css *
+=======================================*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: #dddddd;
+    color: #222222;
+    font: 1rem sans-serif;
+    line-height: 1.6;
+}
+
+/*=====================================
+    * navbar *
+=======================================*/
+.navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: rgba(52, 58, 64, 0.9);
+    color: #ffffff;
+    padding: 10px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/* ===================== */
+/** navbar__logo-area **/
+/* ===================== */
+.navbar__logo-area {
+    -webkit-box-flex: 7;
+    -ms-flex-positive: 7;
+    flex-grow: 7;
+}
+.navbar__logo-area h1 {
+    margin-left: 60px;
+    font-family: Helvetica, sans-serif;
+    font: 2.2rem cursive;
+    cursor: pointer;
+}
+
+/* ===================== */
+/** navbar__menu-area **/
+/* ===================== */
+.navbar__menu-area {
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+}
+.navbar__menu-area ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.navbar__menu-area ul li {
+    list-style-type: none;
+    margin-right: 18px;
+    font-size: 1.2rem;
+}
+.navbar__menu-area ul li a {
+    color: #ffffff;
+    padding: 4px 12px;
+    text-decoration: none;
+}
+.navbar__menu-area ul li a.active {
+    border-bottom: 3px solid #0d6efd;
+}
+.navbar__menu-area ul li a:hover:not(.active) {
+    background: #212529;
+    color: #dddddd;
+    border-radius: 9px;
+}
+
+/* ===================== */
+/** navbar__search-area **/
+/* ===================== */
+.navbar__search-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.search-area__search input {
+    width: 210px;
+    border: none;
+    padding: 5px;
+    border-radius: 9px;
+}
+.search-area__search input::-webkit-input-placeholder {
+    padding-left: 12px;
+    font-size: 1.2rem;
+}
+.search-area__search input::-moz-placeholder {
+    padding-left: 12px;
+    font-size: 1.2rem;
+}
+.search-area__search input:-ms-input-placeholder {
+    padding-left: 12px;
+    font-size: 1.2rem;
+}
+.search-area__search input::-ms-input-placeholder {
+    padding-left: 12px;
+    font-size: 1.2rem;
+}
+.search-area__search input::placeholder {
+    padding-left: 12px;
+    font-size: 1.2rem;
+}
+.search-area__search-img img {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+}
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+
+/*=====================================
+    * layout fo tv, tablet and mobile *
+=======================================*/
+
+/* ===================== */
+/** layout for tablet **/
+/* ===================== */
+@media only screen and (max-width: 991px) {
+    .navbar {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .navbar__logo-area h1 {
+        font-size: 2.5rem;
+        margin-left: 30px;
+    }
+    .navbar__menu-area {
+        margin: 20px 0;
+    }
+    .search-area__search-img img {
+        top: 0;
+        right: 5px;
+    }
+}
+
+/* ===================== */
+/** layout for mobile **/
+/* ===================== */
+@media only screen and (max-width: 575px) {
+    .navbar__logo-area {
+        width: 100%;
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+    }
+    .navbar__logo-area::after {
+        content: '';
+        clear: both;
+    }
+    .navbar__logo-area h1 {
+        width: 90%;
+        float: left;
+        margin: 0;
+    }
+    .navbar__logo-area span {
+        width: 10%;
+        float: right;
+    }
+    .navbar__logo-area span img {
+        width: 50px;
+        height: 50px;
+    }
+    .navbar__menu-area {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3;
+    }
+    .navbar__menu-area ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .navbar__menu-area ul li {
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+    .navbar__search-area {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+        margin-top: 20px;
+    }
+    .d-none {
+        display: block;
+    }
+    .d-block {
+        display: none;
+    }
+}
+
+/* ===================== */
+/** layout for tv **/
+/* ===================== */
+@media only screen and (min-width: 1200px) {
+    .search-area__search-img img {
+        display: none;
+    }
+}
+}

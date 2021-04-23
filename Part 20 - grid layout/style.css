@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+.header2 {
+    width: 70%;
+    margin: 0 auto;
+    background: gray;
+    padding: 20px;
+}
+.header2 h3 {
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px 0;
+}
+.header2 #nav a {
+    display: block;
+    padding: 5px;
+    color: aliceblue;
+    font-size: large;
+}
+.header2 #nav a:hover {
+    color: aqua;
+}
+.arrow {
+    background: #cccccc;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 5px;
+}
+.arrow .arrow-link {
+    box-sizing: border-box;
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    color: rgb(51, 0, 235);
+    font-size: 45px;
+    text-decoration: none;
+}
+
+/**! grid is 2d layout and it is very important for responsive web design **/
+/**
+ * ! display grid and inline grid:
+ * * display grid makes a grid view design but it depend with other grid property.... however, inline-grid makes grid in inline style
+ */
+.grid-container {
+    display: grid;
+    display: inline-grid;
+}
+/**
+ * ! grid-template-columns & grid-template-rows:
+ * ? grid-template-columns: numbers of columns we want and it can define the width of each column
+ * * grid-template-columns: auto auto auto;
+ * --> means that we want three columns of grid layout and every column's have same width
+ * --> we can also set a fixed width of every columns like....
+ * * grid-template-columns: 300px 250px 400px;
+ *
+ * ? grid-template-rows: numbers of rows we want and it can define the width of each row
+ * * it is same as grid-template-column
+ * * grid-template-columns: auto auto auto;
+ * --> means that we want three rows of grid layout and every row's have same height
+ * --> we can also set a fixed width of every rows like....
+ * * grid-template-rows: 300px 250px 400px;
+ *
+ * * we can also use 'fr' as value
+ * ? grid-template-columns/rows: 1fr 2fr 1fr;
+ * --> first column/row cover 1/(1+2+1 or 4) of screen size
+ * --> second column/row cover 2/(1+2+1 or 4) of screen size
+ * --> third column/row cover 1/(1+2+1 or 4) of screen size
+ *
+ * ? if all of  columns/rows width are same we can use repeat(num, value) function
+ * - num --> count of value's iteration
+ * - value --> what we want to repeat
+ * ? repeat multiple value repeat func:
+ * * grid-template-columns: repeat(2, auto 100px);
+ * --> it means that grid-template-columns: auto 100px auto 100px;
+ */
+.grid-container2 {
+    display: grid;
+    /* grid-template-columns: auto auto auto; */
+    /* grid-template-columns: 200px 400px 300px; */
+    grid-template-columns: repeat(3, auto);
+    /* grid-template-rows: auto auto auto; */
+    /* grid-template-rows: repeat(3, auto) */
+    grid-template-rows: 200px 100px 100px;
+}
+.grid-container2 div {
+    background: lightcyan;
+    border: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+}
+
+/**
+ * ! grid-column-gap, grid-row-gap & grid-gap(shorthand):
+ * ? grid-column-gap: value;
+ * * gris-column-gap is space between two columns of grid layout
+ *
+ * ? grid-row-gap: value;
+ * * gris-row-gap is space between two rows of grid layout
+ *
+ * ? grid-gap(shorthand): x-axis(rows-gap) y-axis(columns-gap);
+ * * it is shorthand of grid-row-gap & grid-column-gap
+ * note: every gap should apply in the grid container otherwise it will not work
+ */
+.grid-container3 {
+    background: #2196f3;
+    padding: 10px;
+    font-size: 1.3rem;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    /* grid-column-gap: 10px; */
+    /* grid-row-gap: 20px; */
+    grid-gap: 20px 10px;
+}
+.grid-container3 div {
+    padding: 20px;
+    background: #d3eafd;
+    text-align: center;
+}
+/*
+        ------------- columns line ----------->
+line1   line2    line3    line4    line5   line6     line7    line8
+  ______ ______ ______ ______ ______ ______ ______ ______ ______
+ |______|______|______|______|______|______|______|______|______| line1    ^
+ | |     | |      | |      | |      | |      | |      | |     | |          |
+ | |     | |      | |      | |      | |      | |      | |     | |          |
+ | |     | |      | |      | |      | |      | |      | |     | |
+ | |     | |      | |      | |      | |      | |      | |     | |          r
+ | |     | |      | |      | |      | |      | |      | |     | |          o
+ | |     | |      | |      | |      | |      | |      | |     | |          w
+ |_|____ |_|___ __|_|_ ____|_|______|_|_____ |_|__ ___|_| ____|_|          s
+ |______|______|______|______|______|______|______|______|______| line2
+ | |     | |      | |      | |      | |      | |      | |     | |          l
+ | |     | |      | |      | |      | |      | |      | |     | |          i
+ | |     | |      | |      | |      | |      | |      | |     | |          n
+ | |     | |      | |      | |      | |      | |      | |     | |          e
+ | |     | |      | |      | |      | |      | |      | |     | |
+ | |     | |      | |      | |      | |      | |      | |     | |          |
+ |_|____ |_|___ __|_|_ ____|_|______|_|____ _|_|__ ___|_| ____|_|          |
+ |______|______|______|______|______|______|______|______|______| lin23
+*/
+/**
+ * ! grid-column-start, grid-column-end & grid-column(shorthand):
+ * ? grid-column-start: starting column line number;
+ * * starting column line number means first line of column in grid container
+ *
+ * ? grid-column-end: ending column line number;
+ * * ending column line number means last line of column in grid container
+ *
+ * ? grid-column: grid-column-start / grid-column-end;
+ * * it is shorthand to grid-column-start and grid-column-end
+ *
+ * ? we can also use 'span' keyword in grid-column(shorthand) which means that how many columns we want to cover.....like
+ * * grid-column: 1 / span 3
+ * --> it means that the element cover 3 columns of grid layout
+ *
+ * - grid-columns-start/end or grid-column should use in the specific grid item of grid container
+ * - above's diagram helps to understand what is grid column/row starting/ending line number
+ */
+.grid-container4 {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+.grid-container4 div {
+    background: lightgreen;
+    padding: 20px;
+    font-size: 1.2rem;
+    border: 1px solid darkgreen;
+    text-align: center;
+}
+.grid-container4 .item1 {
+    /* grid-column-start: 1; */
+    /* grid-column-end: 3; */
+    /* grid-column: 1 / 3; */
+    grid-column: 1 / span 3;
+}
+/**
+ * ! grid-row-start, grid-row-end & grid-row(shorthand):
+ * ? grid-row-start: starting row line number;
+ * * starting row line number means first line of row in grid container
+ *
+ * ? grid-row-end: ending row line number;
+ * * ending row line number means last line of row in grid container
+ *
+ * ? grid-row: grid-row-start / grid-row-end;
+ * * it is shorthand to grid-row-start and grid-row-end
+ *
+ * ? we can also use 'span' keyword in grid-row(shorthand) which means that how many row we want to cover.....like
+ * * grid-row: 1 / span 3
+ * --> it means that the element cover 3 row of grid layout
+ *
+ * - grid-row-start/end or grid-row should use in the row specific grid item of grid container
+ * - above's diagram helps to understand what is grid column/row starting/ending line number
+ */
+.grid-container5 {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+.grid-container5 div {
+    background: lightcoral;
+    padding: 20px;
+    font-size: 1.2rem;
+    border: 1px solid darkred;
+    color: white;
+    text-align: center;
+}
+.grid-container5 .item1 {
+    /* grid-row-start: 1; */
+    /* grid-row-end: 3; */
+    /* grid-row: 1 / 3; */
+    grid-row: 1 / span 3;
+}
+
+/**
+ * ! grid-area (shorthand):
+ * ? grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end
+ * * grid-area is a shorthand of grid-row/column-start/end....
+ * --> first 2 value are grid-row-start & grid-column-start
+ * --> last 2 value are grid-row-end & grid-column-end
+ *
+ * * grid-area: 2 / 3 / span 4 / span 3;
+ * --> grid row starts from 2 row's line and cover 4 rows
+ * --> grid column starts from 3 column's line and cover 3 columns
+ *
+ * * we can also naming our area with grid-area property(see next section)
+ *
+ * note:
+ *    - we can also use 'span' key word before last 2 value
+ *    - grid-area property should use in grid item not grid-container
+ */
+.grid-container6 {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+.grid-container6 div {
+    background: lightslategray;
+    padding: 20px;
+    font-size: 1.2rem;
+    border: 1px solid darkslategrey;
+    color: white;
+    text-align: center;
+}
+.grid-container6 .item1 {
+    grid-area: 2 / 2 / span 3 / span 3; /* grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
+}
+
+/**
+ * ! justify-content & align-content:
+ * ? justify-content: start(default)|end|center|space-around|space-between|space-evenly
+ * - justify-content is horizontal align(x-axis)
+ * - justify-content should be applied on grid container
+ * * start(default) --> grid items is left align
+ * * end --> grid items is right align
+ * * center --> grid items is center align
+ * * space-around --> every grid items have same margin around
+ * * space-between --> every two grid items between are same margin
+ * * space-evenly --> every even grid items have same margin around
+ *
+ * ? align-content: stretch(default)|flex-start|flex-end|center|space-around|space-between|space-evenly
+ * - align-content is vertical align(y-axis)
+ * - align-content should be applied on grid container
+ * * stretch(default) --> grid items are vertically inherit parent's height
+ * * start --> grid items are vertical aligned start
+ * * end --> grid items are vertical aligned end
+ * * center --> grid items are vertical aligned center
+ * * baseline --> grid items are vertical aligned baseline
+ * * space-around --> every grid items vertically have same margin around
+ * * space-between --> vertically every two grid items between are same margin
+ * * space-evenly --> vertically every even grid items have same margin around
+ */
+.grid-container7 {
+    background: seagreen;
+    padding: 10px;
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-column-gap: 20px;
+    /* justify-content: baseline; */
+    /* justify-content: start; */
+    /* justify-content: end; */
+    justify-content: center;
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+
+    /* align-content: start; */
+    /* align-content: end; */
+    /* align-content: center; */
+    /* align-content: space-around; */
+    /* align-content: space-between; */
+    align-content: space-evenly;
+}
+.grid-container7 div {
+    background: darkseagreen;
+    border: 3px solid #333;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 60px;
+    padding: 20px;
+    color: #333;
+}
+
+/**
+ * ! layout with grid-area and grid-template-area:
+ * ? grid-area: area name
+ * * we can also naming our area with grid-area property
+ *
+ * * we can skip a area with dot(.) symbols
+ *
+ * ? grid-template-areas: 'area location in single quote'
+ * * then we can use the grid-area name to set our grid layout
+ * * in this way grid-template-columns is not needed
+ */
+.grid-container8 {
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 3px 3px 6px #cccccc;
+    padding: 20px;
+    display: grid;
+    grid-template-areas:
+        'header header header header'
+        'nav nav nav nav'
+        'aside main main main'
+        'aside2 . . .'
+        'footer footer footer footer';
+}
+
+.grid-container8 > * {
+    background: #eee;
+    padding: 30px 10px;
+    font-size: 1.3rem;
+    color: #000000;
+    text-align: center;
+    border: 5px solid #fff;
+}
+.grid-container8 .header {
+    grid-area: header;
+}
+.grid-container8 .nav {
+    grid-area: nav;
+}
+.grid-container8 .aside {
+    grid-area: aside;
+}
+.grid-container8 .aside2 {
+    grid-area: aside2;
+}
+.grid-container8 .main {
+    grid-area: main;
+}
+.grid-container8 .footer {
+    grid-area: footer;
+}

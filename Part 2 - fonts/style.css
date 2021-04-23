@@ -1,0 +1,66 @@
+/**
+ * ! General Font Family:
+ * * Serif fonts have a small stroke at the edges of each letter. They create a sense of formality and elegance.
+ * * Sans-serif fonts have clean lines (no small strokes attached). They create a modern and minimalistic look.
+ * * Monospace fonts - here all the letters have the same fixed width. They create a mechanical look.
+ * * Cursive fonts imitate human handwriting.
+ * * Fantasy fonts are decorative/playful fonts.
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+/* ! sec1 */
+.para1 {
+    font-family: sans-serif;
+}
+.para2 {
+    font-family: serif;
+}
+.para3 {
+    font-family: monospace;
+}
+.para4 {
+    font-family: fantasy;
+}
+.para5 {
+    font-family: cursive;
+}
+
+/* ! sec2 */
+/**
+ * ? font-style: normal(default) | italic | oblique
+ */
+.font-style {
+    font-style: oblique;
+}
+/**
+ * ? font-weight: 100 |200 |300 (light) |400 (regular) |500| 600| 700( bold)| 800 (bolder)| 900
+ */
+.font-weight {
+    font-weight: bolder;
+}
+
+/* ! shorthand */
+/**
+ * ! font shorthand property:
+ * ? serial -->
+ * * font-style
+ * * font-variant
+ * * font-weight
+ * * font-size/line-height
+ * * font-family
+ * note: font-size and font-family is required
+ */
+.font {
+    font: 1rem cursive;
+}

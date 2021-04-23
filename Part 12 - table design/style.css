@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+/**
+ * ! basic table design:
+ * ? border-collapse: separate(default) | collapse;
+ * ? border-space: size_in_unit(px,%,em,rem);
+ * * border-space works only when border-collapse is separate....this space works with two borders space
+ */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table,
+.table-row-head th,
+.table-row td {
+    border: 1px solid black;
+}
+.table-row-head th,
+.table-row td {
+    text-align: center;
+    padding: 10px;
+}
+.table-row-head th {
+    background: #4caf50;
+    color: #ffffff;
+}
+.table-row:nth-child(even) {
+    background: #f2f2f2;
+    color: #222;
+}
+
+/*=====================================
+    * Table with bottom border *
+=======================================*/
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+.table2 {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table2,
+.table-row-head2 th,
+.table-row2 td {
+    border-bottom: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+}
+
+/*=====================================
+    * Responsive table design *
+=======================================*/
+/**
+ * ! when we responsive a table for small screen we should wrap whole table with a div and set the style to overflow-x:auto;
+ */
+.container2 {
+    width: 80%;
+    margin: 0 auto;
+}
+.overflow {
+    overflow: auto;
+}
+.table3 {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table3,
+.table-row-head3 th,
+.table-row3 td {
+    border: 1px solid #333333;
+    padding: 10px;
+    text-align: left;
+}
+.table-row-head3 th {
+    background: papayawhip;
+}
+.table-row3:nth-child(even) {
+    background: seashell;
+}
+.table-row3:nth-child(odd) {
+    background: skyblue;
+}

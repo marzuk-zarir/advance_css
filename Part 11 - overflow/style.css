@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+/**
+ * ! overflow property
+ * ? overflow: visible(default) | hidden | scroll | auto;
+ * * hidden -> extra content will hide
+ * * scroll -> extra content won't hide and scrollbar will appear on x,y-axis
+ * * auto -> extra content's visibility will change as need
+ */
+.overflow {
+    background: rgba(128, 128, 128, 0.8);
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+}

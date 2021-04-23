@@ -1,0 +1,157 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+
+/**
+ * ! Pseudo class rules
+ * * element_name :pseudo_class
+ *
+ * ! Pseudo element rules
+ * * element_name ::pseudo_element
+ */
+.anchor {
+    text-align: center;
+}
+.anchor a {
+    color: blue;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+/**
+ * ! anchor pseudo class:
+ * * visited --> when we already visit this link once
+ * * hover --> when we mouse over of the element
+ * * active --> request's & process's between time of the element
+ * note: those pseudo class should use this flow (visited-> hover-> active)
+ */
+.anchor a:visited {
+    color: coral;
+}
+.anchor a:hover {
+    color: cadetblue;
+}
+.anchor a:active {
+    color: bisque;
+}
+
+.paragraph p {
+    padding: 20px;
+}
+/**
+ * ! paragraph pseudo element:
+ * * :first-child --> 1st element of parent
+ * * :last-child --> last element of parent
+ * * :nth-child(n | formula{like 3n+1})child --> nth (element | formula) of parent
+ */
+.paragraph p:first-child {
+    color: cornflowerblue;
+}
+.paragraph p:last-child {
+    color: crimson;
+}
+.paragraph p:nth-child(3) {
+    background: #eeeeee;
+}
+
+input[type='text'] {
+    width: 90%;
+    margin: 10px;
+    padding: 8px;
+}
+/**
+ * ! More pseudo:
+ * * :checked --> when we checked the checkbox
+ * * :focus --> when we focus into the input box
+ * * :not(element_name) --> grab all elements without {element_name}
+ * * :lang --> allows you to define special rules for different languages
+ * for more info: https://www.w3schools.com/css/css_pseudo_classes.asp
+ */
+input[type='checkbox']:checked {
+    width: 50px;
+    height: 50px;
+}
+input[type='text']:focus {
+    background: #eeeeee;
+}
+.not-pseudo {
+    padding: 10px;
+}
+.not-pseudo p {
+    color: black;
+}
+.not-pseudo:not(p) {
+    color: rgb(79, 230, 104);
+}
+q:lang(no) {
+    quotes: '~''~';
+}
+/**
+ * ! before & after:
+ * * ::before --> some contains before the element
+ * * ::after --> some contains after the element
+ * note: ::before, ::after must have content properties
+ */
+.before-after::before {
+    content: '😊';
+    font-size: 30px;
+}
+.before-after::after {
+    content: '😋';
+    font-size: 20px;
+}
+
+/**
+ * ! 1st letter,line and selection:
+ * * ::first-letter --> grab the 1st letter of the element
+ * * ::first-line --> grab the 1st line of the element
+ * * ::selection --> when we select the elements in browser
+ */
+.letter-line-selection::first-letter {
+    font-size: 40px;
+    font-weight: 800;
+}
+.letter-line-selection::first-line {
+    color: brown;
+}
+.letter-line-selection::selection {
+    background: yellow;
+    color: red;
+}
+
+.marker {
+    list-style: circle;
+}
+.marker li {
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+/**
+ * ! marker:
+ * * ::marker --> grab the list-style
+ */
+.marker li::marker {
+    color: red;
+    font-size: 30px;
+}
+
+/**
+ * ! placeholder:
+ * * ::placeholder --> grab the input box's placeholder
+ */
+#pl::placeholder {
+    font-size: 18px;
+    color: rgba(255, 0, 0, 0.7);
+}

@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+.header {
+    width: 70%;
+    margin: 0 auto;
+    background: gray;
+    padding: 20px;
+}
+.header h3 {
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px 0;
+}
+.header #nav a {
+    display: block;
+    padding: 5px;
+    color: aliceblue;
+    font-size: large;
+}
+.header #nav a:hover {
+    color: aqua;
+}
+.arrow {
+    background: #cccccc;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 5px;
+}
+.arrow .arrow-link {
+    box-sizing: border-box;
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    color: rgb(51, 0, 235);
+    font-size: 45px;
+    text-decoration: none;
+}
+
+/* ! float, display, position is required before learning flex box layout */
+
+/**
+ * ! flex container:
+ * ? in flex container we should use display:flex....this covert normal layout from flex layout
+ * * flex-wrap: nowrap(default) | wrap | wrap-reverse
+ *
+ * * wrap is automatically force a element for place in 2nd line if 1st line can't contains all elements...it helps to show all elements in screen
+ *
+ * * wrap-reverse is like wrap but it start from 2nd line if 2nd line can't contains all elements other elements automatically placed in 1st line
+ */
+.flex-container {
+    background: slategray;
+    padding: 5px;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-container div {
+    padding: 10px;
+    background: seagreen;
+    margin: 7px;
+    border: 5px solid salmon;
+}
+
+/**
+ * ! flex direction & flex-flow(shorthand):
+ * ? flex box is 1d layout....row is x-axis and column is y-axis
+ * * flex-direction: row(default) | row-reverse | column | column-reverse
+ * note:
+ *  - flex-flow: flex-direction flex-wrap
+ *  - serial doesn't matter in flex-flow
+ */
+.flex-container2 {
+    background: slategray;
+    padding: 5px;
+    font-size: 20px;
+    display: flex;
+    flex-flow: wrap column;
+}
+.flex-container2 div {
+    padding: 10px;
+    background: lightgreen;
+    margin: 7px;
+    border: 5px solid salmon;
+}
+
+/**
+ * ! justify-content & align-items:
+ *
+ * ? justify-content: flex-start(default)| flex-end| center| space-around | space-between | space-evenly
+ * - justify-content should be applied on flex-container
+ * * flex-starts(default) --> flex items is left align
+ * * flex-end --> flex items is right align
+ * * center --> flex items is center align
+ * * space-around --> every flex items have same margin around
+ * * space-between --> every two flex items between are same margin
+ * * space-evenly --> every even flex items have same margin around
+ *
+ *
+ * ? align-items: stretch(default) | flex-start | flex-end | center | baseline
+ * - align-items should be applied on flex-container
+ * * stretch(default) --> flex items are vertically inherit parent's height
+ * * flex-start --> flex items are vertical aligned start
+ * * flex-end --> flex items are vertical aligned end
+ * * center --> flex items are vertical aligned center
+ * * baseline --> flex items are vertical aligned baseline
+ */
+
+.flex-container3 {
+    background: slategray;
+    padding: 5px;
+    font-size: 20px;
+    height: 200px;
+    display: flex;
+    flex-flow: wrap row;
+    /* justify-content: flex-start; */
+    /* justify-content: flex-end; */
+    justify-content: center;
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    align-items: center;
+    /* align-items: baseline; */
+}
+.flex-container3 div {
+    padding: 10px;
+    background: lightblue;
+    margin: 7px;
+    border: 5px solid salmon;
+}
+
+/**
+ * ! flex-grow & flex-shrink:
+ * ? flex-grow:
+ * * flex-grow is a ratio of flex container's items
+ * * if flex-container's width is 100% then:
+ * * flex1's width is 20% when flex-grow: 2
+ * * flex2's width is 60% when flex-grow: 6
+ * * flex3's width is 10% when flex-grow: 1
+ * * flex4's width is 10% when flex-grow: 1
+ *
+ * ? flex-shrink:
+ * * flex-shrink property specifies how much a flex item will shrink relative to the rest of the flex items.
+ */
+.flex-container4 {
+    background: slategray;
+    padding: 5px;
+    font-size: 20px;
+    display: flex;
+    flex-flow: wrap row;
+    flex-shrink: 1;
+}
+.flex-container4 div {
+    padding: 10px;
+}
+.flex-container4 .flex1 {
+    background: lightgoldenrodyellow;
+    flex-grow: 2; /** width is 20% of flex-container */
+}
+.flex-container4 .flex2 {
+    background: lightsalmon;
+    flex-grow: 6; /** width is 60% of flex-container */
+}
+.flex-container4 .flex3 {
+    background: cyan;
+    flex-grow: 1; /** width is 10% of flex-container */
+}
+.flex-container4 .flex4 {
+    background: lightgrey;
+    flex-grow: 1; /** width is 10% of flex-container */
+}
+
+/**
+ * ! flex-basis & order:
+ * ? flex-basic:
+ * * flex-basis is a minimum width of flex items....if flex-item width is less than flex-basis this flex item will placed in bottom of flex container
+ * * but min-width is not works properly in flex items
+ * * flex-basis should add individual flex-item
+ *
+ * ? order:
+ * * order is ordering of flex-item
+ */
+.flex-container5 {
+    background: slategray;
+    padding: 2px;
+    font-size: 20px;
+    display: flex;
+    flex-flow: wrap row;
+}
+.flex-container5 div {
+    padding: 10px;
+    background: lightyellow;
+    margin: 2px;
+    border: 5px solid darkcyan;
+    flex-grow: 1;
+}
+.flex-container5 .basis1 {
+    flex-basis: 150px;
+    order: 2;
+}
+.flex-container5 .basis2 {
+    flex-basis: 300px;
+    order: 4;
+}
+.flex-container5 .basis3 {
+    flex-basis: 300px;
+    order: 1;
+}
+.flex-container5 .basis4 {
+    flex-basis: 150px;
+    order: 3;
+}
+
+/**
+ * ! flex(shorthand) & align-self:
+ * ? flex: flex-grow flex-shrink flex-basis
+ * note: every value is required and serial should maintain for work otherwise it will not work
+ *
+ * ? align-self: stretch(default)| flex-start| flex-end| center| baseline
+ * * it works like align-items but align-items should use in flex-container but we can vertical aligned our individual flex item with add align-self properties in our individual flex-item
+ */
+.flex-container6 {
+    box-sizing: border-box;
+    background: slategray;
+    height: 300px;
+    padding: 2px;
+    font-size: 20px;
+    display: flex;
+    flex-flow: wrap row;
+}
+.flex-container6 div {
+    padding: 10px;
+    background: lightskyblue;
+    margin: 2px;
+    border: 1px solid darkslategray;
+    flex-grow: 1;
+    text-align: center;
+}
+.flex-container6 .align-self-start {
+    align-self: flex-start;
+}
+.flex-container6 .align-self-end {
+    align-self: flex-end;
+}
+.flex-container6 .align-self-baseline {
+    align-self: baseline;
+}
+.flex-container6 .align-self-center {
+    align-self: center;
+}

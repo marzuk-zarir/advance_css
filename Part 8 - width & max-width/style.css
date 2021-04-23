@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+
+/**
+ * ? max-width:
+ * ! max-width works when screen width is bigger than max-width's_value(in_here_600px) otherwise works width's value
+ * note: width works fine...but max-width overwrite width's value
+ */
+/* .width {
+    background: greenyellow;
+    width: 600px;
+} */
+.max-width {
+    background: green;
+    color: #fff;
+    max-width: 600px;
+    width: 90%;
+}

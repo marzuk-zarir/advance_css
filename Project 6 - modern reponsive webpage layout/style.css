@@ -1,0 +1,135 @@
+/*=====================================
+    * reset code *
+=======================================*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/*=====================================
+    * container *
+=======================================*/
+
+.container {
+    font-size: 1.4rem;
+    text-align: center;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer';
+}
+
+/*=====================================
+    * header section *
+=======================================*/
+
+.header {
+    grid-area: header;
+    background: #ccc;
+    border: 5px solid #fff;
+    display: grid;
+    grid-template-areas:
+        'logo nav'
+        'slider slider';
+}
+.header .brand-logo {
+    grid-area: logo;
+    height: 20px;
+}
+.header .main-nav {
+    grid-area: nav;
+    height: 20px;
+}
+.header .slider {
+    border-top: 5px solid #fff;
+    grid-area: slider;
+    height: 100px;
+}
+
+/*=====================================
+    * main content *
+=======================================*/
+
+.main {
+    grid-area: main;
+    background: #ccc;
+    border: 5px solid #fff;
+    display: grid;
+    grid-template-areas: 'aside main main main main';
+}
+
+.main .aside {
+    grid-area: aside;
+    border-right: 5px solid #fff;
+}
+.main .section1 {
+    grid-area: main;
+    height: 300px;
+}
+
+/*=====================================
+    * footer section *
+=======================================*/
+
+.footer {
+    grid-area: footer;
+    background: #ccc;
+    border: 5px solid #fff;
+    display: grid;
+    grid-template-areas:
+        'nav1 nav2'
+        'copy copy';
+}
+.footer .footer-nav1 {
+    grid-area: nav1;
+}
+.footer .footer-nav2 {
+    grid-area: nav2;
+}
+.footer .copyright-section {
+    grid-area: copy;
+}
+
+/*=====================================
+    * layout for mobile *
+=======================================*/
+@media only screen and (max-width: 767px) {
+    /** header **/
+    .header {
+        grid-template-areas:
+            'logo logo'
+            'nav nav'
+            'slider slider';
+    }
+    /** main **/
+    .main {
+        grid-template-areas:
+            'main main main main main'
+            'aside aside aside aside aside';
+    }
+    .main .aside {
+        border-right: none;
+    }
+    .main .section1 {
+        height: 100px;
+    }
+
+    /** footer **/
+    .footer {
+        grid-template-areas:
+            'nav1 nav1'
+            'nav2 nav2'
+            'copy copy';
+    }
+}

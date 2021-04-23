@@ -1,0 +1,130 @@
+/**============================================
+**
+** Author: Marzuk Zarir
+** Github Profile: https://www.github.com/marzuk-zarir
+** Version: 1.0.0
+** Licensed under the MIT license - http://opensource.org/licenses/MIT
+** Copyright (c) 2021 Marzuk zarir
+**
+**==============================================*/
+
+/*=====================================
+    * common css *
+=======================================*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #92969e;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 75%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/*=====================================
+    * form design *
+=======================================*/
+#my_form {
+    margin-top: 60px;
+    background: #22262b;
+    width: 100%;
+    padding: 30px;
+    color: #bbbfca;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+/*=====================================
+    * label & input design *
+=======================================*/
+#my_form label {
+    margin-top: 15px;
+    font-weight: 300;
+}
+
+#my_form input[type='text'],
+#my_form input[type='email'],
+#my_form input[type='password'] {
+    background: #545965;
+    font-size: 1rem;
+    color: #ffffff;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+#my_form input[type='text']::placeholder,
+#my_form input[type='email']::placeholder,
+#my_form input[type='password']::placeholder {
+    color: #7d7e81;
+}
+
+.condition input[type='checkbox'] {
+    margin: 8px 0 7px;
+    border: none;
+}
+
+.condition label {
+    font-size: 0.8rem !important;
+    font-weight: 300;
+}
+
+#my_form hr {
+    width: 93%;
+    border-bottom: none;
+    border-color: #9699a0;
+    margin: 15px auto;
+}
+
+#my_form input[type='submit'] {
+    background: #545965;
+    color: #bbbfca;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/*=====================================
+    * social icon *
+=======================================*/
+.icons {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.icon {
+    width: 40px;
+    height: auto;
+    margin: 0 7px;
+}
+
+/*=====================================
+    * login text *
+=======================================*/
+.crt-account {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #d2d6e0;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.crt-account:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+
+/**
+ * ! text-shadow:
+ * ? text-shadow: color x-axis-shadow-length y-axis-shadow-length blur-radius
+ * * we can also use multiple shadow with text and this cause every shadow will overwrite other shadows and create a color mixer...
+ * more: https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-shadow6
+ * note: - blur-radius is optional
+ *       - serial should be maintained properly otherwise doesn't works
+ */
+.text-shadow {
+    font-size: 2.2rem;
+    padding: 10px;
+    font-weight: 700;
+    color: #333;
+    text-shadow: red 2px 2px 5px; /* color x-axis y-axis blur-radius */
+}
+
+/** box shadow **/
+.box {
+    width: 300px;
+    height: 200px;
+    margin: 20px auto;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 10px;
+}
+/**
+ * ! box-shadow:
+ * ? box-shadow: insert(optional) x-axis y-axis blur-radius
+ * * box-shadow is all most same like text-shadow but it is only works with box
+ * * if we use insert option in box-shadow shadow will work inside the box
+ * ? insert option is most used in button when we hover them
+ * * but we can use 4th value which is spread means how shadow spreads...
+ * note: - blur-radius is optional
+ *       - insert is optional
+ *       - serial should maintained properly
+ *       - all shadow's are none by default in all elements
+ */
+/**
+ * ? box-shadow without blur-radius
+ */
+.box-shadow1 {
+    background: steelblue;
+    box-shadow: 8px 8px gray;
+}
+/**
+ * ? box-shadow with blur-radius
+ */
+.box-shadow2 {
+    background: lightgreen;
+    box-shadow: 8px 8px 3px darkgrey;
+}
+/**
+ * ? box-shadow all around the box
+ */
+.box-shadow3 {
+    background: lightcoral;
+    box-shadow: 6px 6px 4px lightslategrey, -6px -6px 4px lightslategrey;
+}
+/**
+ * ? box-shadow with hover effect
+ */
+.box-shadow4 {
+    background: lightsteelblue;
+}
+.box-shadow4:hover {
+    box-shadow: 5px 5px 5px darkcyan;
+    transition: 0.3s;
+    cursor: pointer;
+}
+/**
+ * ? box-shadow inside the box...it is most used in button when we hover them
+ */
+.box-shadow5 {
+    background: lightseagreen;
+    box-shadow: inset 5px 5px 6px #444444;
+}

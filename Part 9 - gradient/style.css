@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.heading {
+    padding: 15px 5px;
+    font-size: 30px;
+}
+
+/**
+ * ! linear-gradient:
+ * ? background: linear-gradient(direction | angle, color1 , color2, color3...)
+ * * we can also use percentage of color after color name or hex value
+ * * direction wise color will flow
+ * ? direction in linear-gradient: [to top|bottom|left|right|top left|top right|bottom left|bottom right]
+ * * repeating-linear-gradient() repeat gradient with full width/height... so we should use net % smaller than 100%
+ */
+.gradient {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to left, limegreen, red, yellow);
+}
+.rainbow-gradient {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    padding-top: 100px;
+    font: 30px bold;
+    background: linear-gradient(
+        to right,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+    );
+}
+
+/**
+ * ! radial gradient:
+ * * background: radial-gradient({shape} at {position}, color1, color2, color3...)
+ *  * we can also use percentage of color after color name or hex value
+ * ? shape =>>  circle| closest-side| farthest-side| closest-corner| farthest-corner
+ * ? position =>> x-value(%) y-value(%)
+ */
+.radial-gradient {
+    width: 100%;
+    height: 400px;
+    background: radial-gradient(circle, red, blue, green);
+}

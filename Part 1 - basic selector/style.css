@@ -1,0 +1,58 @@
+/**
+ * ! Global selector declare with {*} symbol
+ * ? it means that every elements have this global style
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+}
+body {
+    line-height: 1.6;
+}
+p {
+    font-size: 1rem;
+}
+.headers {
+    padding: 30px 5px 10px 5px;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #333333;
+}
+#margin {
+    margin-bottom: 100px;
+}
+#section {
+    background: cyan;
+    padding: 10px;
+}
+#heading {
+    color: darkblue;
+}
+
+/**
+ * ! Child Selector declare with {>} symbol
+ * ? it means that parent's all childs have this style
+ * * but parent's child's child elements can't received this style
+ * * if we don't use child(>) symbol, than parent's child's child elements can receive that style
+ */
+#section2 > p {
+    background: chartreuse;
+}
+#section3 + p {
+    background: #333333;
+}
+
+/**
+ * ! Adjacent Sibling Selector declare with {+} symbol
+ * ? it means that left_selector's after immediate declared right_selector style is works
+ *
+ * ! Adjacent General Sibling Selector declare with {~} symbol
+ * ? it means that left_selector's after all declared right_selectors style is works
+ */
+#adjust + p {
+    background: #333333;
+    color: aliceblue;
+    padding: 20px;
+}
